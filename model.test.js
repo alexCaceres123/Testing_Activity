@@ -38,3 +38,41 @@ describe("Operació, undefined", () => {
         expect(result).toBe("Error")
     });
 });
+
+describe("Operació, undefined", () => {
+    test("Valor decimal", () => {
+        let calc = new Calculadora();
+        calc.set_point();
+        calc.set(2);
+        expect(calc.value1).toBe("0.2");
+        expect(calc.operator).toBe(undefined);
+        expect(calc.value2).toBe(undefined);
+    });
+});
+
+describe("Clean", () => {
+   test("Natejar vals", () => {
+        let calc = new Calculadora();
+        calc.set(2);   
+        calc.operator = '+';  
+        calc.set(3);
+        calc.clear();
+        expect(calc.value1).toBe(undefined);
+        expect(calc.operator).toBe(undefined);
+        expect(calc.value2).toBe(undefined);
+    });
+});
+
+
+describe("addvalue", () => {
+    test("Afegir una altre valor 1 a value1", () => {
+        let calc = new Calculadora();
+        calc.set(1);
+        calc.set(1);
+        expect(calc.value1).toBe("11");
+        expect(calc.operator).toBe(undefined);
+        expect(calc.value2).toBe(undefined);
+    });
+ });
+    
+   
